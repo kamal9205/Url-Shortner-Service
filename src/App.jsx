@@ -151,7 +151,7 @@ export default function App() {
 
       <footer className="footer">
         <span className="muted">
-          Backend expected at <span className="mono">http://localhost:8001</span>
+          Backend API: <span className="mono">{import.meta.env.DEV ? 'http://localhost:8001' : '/api'}</span>
         </span>
       </footer>
     </div>

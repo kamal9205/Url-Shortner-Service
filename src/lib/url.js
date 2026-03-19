@@ -1,4 +1,4 @@
-import { BACKEND_ORIGIN } from './constants'
+import { DEV_BACKEND_ORIGIN } from './constants'
 
 export function isProbablyUrl(value) {
   try {
@@ -10,5 +10,9 @@ export function isProbablyUrl(value) {
 }
 
 export function buildShortUrl(id) {
-  return `${BACKEND_ORIGIN}/${id}`
+  if (import.meta.env.DEV) return `${DEV_BACKEND_ORIGIN}/${id}`
+  if (typeof window !== 'undefined' && window.location?.origin) {
+    return `${window.location.origin}/${id}`
+  }
+  return `/${id}`
 }
