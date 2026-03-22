@@ -151,7 +151,8 @@ export default function App() {
 
       <footer className="footer">
         <span className="muted">
-          Backend API: <span className="mono">{import.meta.env.DEV ? 'http://localhost:8001' : '/api'}</span>
+          {/* Backend API: <span className="mono">{import.meta.env.DEV ? 'http://localhost:8001' : '/api'}</span> */}
+          Backend API: <span className="mono">{import.meta.env.VITE_API_URL}</span>
         </span>
       </footer>
     </div>

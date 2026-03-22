@@ -9,10 +9,13 @@ export function isProbablyUrl(value) {
   }
 }
 
+// export function buildShortUrl(id) {
+//   if (import.meta.env.DEV) return `${DEV_BACKEND_ORIGIN}/${id}`
+//   if (typeof window !== 'undefined' && window.location?.origin) {
+//     return `${window.location.origin}/${id}`
+//   }
+//   return `/${id}`
+// }
 export function buildShortUrl(id) {
-  if (import.meta.env.DEV) return `${DEV_BACKEND_ORIGIN}/${id}`
-  if (typeof window !== 'undefined' && window.location?.origin) {
-    return `${window.location.origin}/${id}`
-  }
-  return `/${id}`
+  return `${import.meta.env.VITE_API_URL}/${id}`;
 }
